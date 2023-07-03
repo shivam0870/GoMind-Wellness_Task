@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h1>Student Form</h1>
+
+    <form method="POST" action="/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="college">College:</label>
+        <input type="text" id="college" name="college" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Submitted Data</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>College</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.college }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
